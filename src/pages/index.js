@@ -32,7 +32,7 @@ export default function Home({ home, products }) {
               <img
                 className={styles.heroImage}
                 src={heroBackground.url}
-                alt=""
+                alt="hero background"
               />
             </a>
           </Link>
