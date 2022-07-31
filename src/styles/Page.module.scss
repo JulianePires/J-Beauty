@@ -30,6 +30,7 @@
   width: 50%;
   height: 100%;
   color: white;
+  text-shadow: 3px 3px #2d2d2d;
   padding-left: 3em;
 
   @media (max-width: 720px) {
@@ -47,7 +48,7 @@
 
   h2 {
 
-    font-size: 3.5em;
+    font-size: 3.0em;
     margin: 0;
 
     @media (max-width: 1024px) {
