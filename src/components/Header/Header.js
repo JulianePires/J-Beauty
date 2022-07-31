@@ -4,12 +4,14 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useSnipcart } from "use-snipcart";
 
 import Container from "@components/Container";
+import { mainCategories } from "@data/mainCategories";
 
 import styles from "./Header.module.scss";
 
 const Header = () => {
   const { cart = {} } = useSnipcart();
-  console.log(cart);
+
+  console.log();
 
   return (
     <header className={styles.header}>
@@ -20,21 +22,16 @@ const Header = () => {
           </Link>
         </p>
         <ul className={styles.headerLinks}>
-          <li>
-            <Link href="#">
-              <a>Link</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="#">
-              <a>Link</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="#">
-              <a>Link</a>
-            </Link>
-          </li>
+          {mainCategories?.map((category) => (
+            <li key={category.name}>
+              <Link href={category.url}>
+                <a>{category.name}</a>
+              </Link>
+            </li>
+          ))}
+          <Link href="/stores">
+            <a>Find a Store</a>
+          </Link>
         </ul>
         <p className={styles.headerCart}>
           <button className="snipcart-checkout">

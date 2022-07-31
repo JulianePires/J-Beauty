@@ -16,7 +16,7 @@ export default function Home({ home, products }) {
     <Layout>
       <Head>
         <title>J-Beauty</title>
-        <meta name="description" content="Be who yout want" />
+        <meta name="description" content="Be who yout want to be" />
       </Head>
 
       <Container>
@@ -38,7 +38,7 @@ export default function Home({ home, products }) {
           </Link>
         </div>
 
-        <h2 className={styles.heading}>Featured Gear</h2>
+        <h2 className={styles.heading}>Cloths Wear</h2>
 
         <ul className={styles.products}>
           {products.slice(0, 4).map((product) => {
@@ -107,7 +107,7 @@ export async function getStaticProps() {
           slug
           heroBackground
         }
-        products(orderBy: name_ASC) {
+        products(where: { categories_some: { slug: "cloths" } }) {
           id
           name
           price
