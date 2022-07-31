@@ -15,12 +15,12 @@ export default function Home({ home, products }) {
   return (
     <Layout>
       <Head>
-        <title>Space Jelly Gear</title>
-        <meta name="description" content="Get your Space Jelly gear!" />
+        <title>J-Beauty</title>
+        <meta name="description" content="Be who yout want" />
       </Head>
 
       <Container>
-        <h1 className="sr-only">Space Jelly Gear</h1>
+        <h1 className="sr-only">J-Beauty</h1>
 
         <div className={styles.hero}>
           <Link href={heroLink}>
@@ -59,7 +59,16 @@ export default function Home({ home, products }) {
                   </a>
                 </Link>
                 <p>
-                  <Button>Add to Cart</Button>
+                  <Button
+                    className="snipcart-add-item"
+                    data-item-id={product.id}
+                    data-item-name={product.name}
+                    data-item-price={product.price}
+                    data-item-image={product.image.url}
+                    data-item-url={`/products/${product.slug}`}
+                  >
+                    Add to Cart
+                  </Button>
                 </p>
               </li>
             );
